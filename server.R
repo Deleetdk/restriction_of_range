@@ -17,8 +17,10 @@ shinyServer(
       data["group"] = group #add to data
       
       #plot
-      xyplot(Y ~ X, data, type=c("p","r"), col.line = "darkorange", lwd = 1,
-             group=group, auto.key = TRUE)
+      ggplot(data = data, aes(x = X, y = Y)) +
+        geom_point(aes(color=group)) +
+        geom_smooth(method=lm, se=F, color="darkblue")
+        
     })
     
     output$text <- renderPrint({
