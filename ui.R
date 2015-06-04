@@ -16,9 +16,12 @@ shinyUI(fluidPage(
     
     
     mainPanel(
-      plotOutput("plot"),width=8,
+      #The text with statistical information about the results.
+      h1("Scatter plot showing range restriction"),
       
-      textOutput("text")
+      #the plot
+      plotOutput("plot"), width=8
+      
       )
   )
 ))
