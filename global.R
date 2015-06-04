@@ -1,6 +1,5 @@
 #global.R
 
-install.packages(pacman)
 library(pacman)
 p_load(ggplot2, devtools, grid, stringr)
 
