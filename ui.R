@@ -5,7 +5,7 @@ shinyUI(fluidPage(
   
   sidebarLayout(
     sidebarPanel(
-      helpText("Get an intuitive understanding of restriction of range using this interactive plot. The slider below limits the dataset to those within the limits."),
+      helpText("The slider below limits the sample to those within the limits."),
       
       sliderInput("limits",
         label = "Restriction of range",
