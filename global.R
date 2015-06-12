@@ -10,4 +10,4 @@ library(grid)
 data = read.csv("data.csv",row.names = 1) #load data
 
 #title
-title = "Understanding restriction of range"
+title = "Restriction of range"
