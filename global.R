@@ -1,13 +1,11 @@
 #global.R
 
 #not using pacman
-library(ggplot2)
 library(devtools)
+library(tidyverse)
 library(stringr)
+library(magrittr)
 library(grid)
-
-#load data
-data = read.csv("data.csv",row.names = 1) #load data
 
 #title
 title = "Restriction of range"
