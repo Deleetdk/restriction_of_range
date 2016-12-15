@@ -123,28 +123,16 @@ shinyServer(
       text_object
     })
     
-    #This function makes the text to add to the plot
-    #It will call the reac_cor() function to get the value.
-#     reac_text_object_2 = reactive({
-#       #make the text
-#       text = str_c("Variance reduced by: ", reac_var_proportion())
-#       #make the text object
-#       text_object = grobTree(textGrob(text, x=.98,  y=.02, hjust=1, vjust = 0), #text position
-#                              gp = gpar(fontsize=11)) #text size
-#       return(text_object)
-#     })
-    
-    
     #The plot output
     output$plot <- renderPlot({
       
       #plot
       ggplot(data = reac_data(), aes(x = X, y = Y)) + #set up
         theme_bw() +
-        geom_point(aes(color=group)) + #points
-        geom_smooth(method=lm, se=F, color="darkblue") + #regression line
-        annotation_custom(reac_text_object()) # + #add the text object
-        #annotation_custom(reac_text_object_2()) #add the second text object
+        geom_point(aes(color = group), alpha = .2) + #points
+        scale_color_manual(values = c("#07b501", "#b50101")) +
+        geom_smooth(method = lm, se = F, color = "darkblue") + #regression line
+        annotation_custom(reac_text_object()) # #add the text object
     })
 
   }
